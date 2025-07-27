@@ -12,4 +12,4 @@ ENV RECORDS_DIR=/data/records
 ENV SPLIT_DIR=/data/splits
 
 # Presuming there is a `my_app` command provided by the project
-CMD ["sh", "dataset_conversion.sh"]
+ENTRYPOINT ["sh", "dataset_conversion.sh"]
