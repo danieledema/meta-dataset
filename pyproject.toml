@@ -1,0 +1,18 @@
+[project]
+name = "meta-dataset"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "absl-py>=2.3.1",
+    "etils>=1.13.0",
+    "gin-config>=0.5.0",
+    "numpy>=1.26.4",
+    "scikit-learn>=1.7.1",
+    "six>=1.17.0",
+    "tensorflow==2.15.0",
+    "tensorflow-datasets>=4.9.9",
+    "tensorflow-estimator>=2.15.0",
+    "tf-models-official>=2.15.0",
+]
