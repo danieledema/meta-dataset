@@ -13,8 +13,11 @@ echo "Downloads root: $DOWNLOADS_ROOT"
 echo "Dataset root: $DOWNLOADS_ROOT/$DATASET_NAME"
 echo "Running conversion script..."
 
+# Print command for debugging
+echo "Command: uv run python3 -m meta_dataset.dataset_conversion.convert_datasets_to_records --dataset=$DATASET_NAME --${DATASET_NAME}_data_root=$DOWNLOADS_ROOT/$DATASET_NAME --splits_root=$SPLITS_ROOT --records_root=$RECORDS_ROOT"
+
 uv run python3 -m meta_dataset.dataset_conversion.convert_datasets_to_records \
   --dataset=$DATASET_NAME \
-  --dtd_data_root=$DOWNLOADS_ROOT/$DATASET_NAME \
+  --{$DATASET_NAME}_data_root=$DOWNLOADS_ROOT/$DATASET_NAME \
   --splits_root=$SPLITS_ROOT \
   --records_root=$RECORDS_ROOT \
