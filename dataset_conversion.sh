@@ -6,6 +6,11 @@ DOWNLOADS_ROOT=/data/downloads
 
 DATASET_NAME=$1
 
+if [ -z "$DATASET_NAME" ]; then
+  echo "Error: No dataset name provided."
+  exit 1
+fi
+
 echo "Converting dataset: $DATASET_NAME"
 echo "Records root: $RECORDS_ROOT"
 echo "Splits root: $SPLITS_ROOT"
@@ -18,6 +23,6 @@ echo "Command: uv run python3 -m meta_dataset.dataset_conversion.convert_dataset
 
 uv run python3 -m meta_dataset.dataset_conversion.convert_datasets_to_records \
   --dataset=$DATASET_NAME \
-  --{$DATASET_NAME}_data_root=$DOWNLOADS_ROOT/$DATASET_NAME \
+  --${DATASET_NAME}_data_root=$DOWNLOADS_ROOT/$DATASET_NAME \
   --splits_root=$SPLITS_ROOT \
-  --records_root=$RECORDS_ROOT \
+  --records_root=$RECORDS_ROOT
